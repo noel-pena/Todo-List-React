@@ -1,6 +1,16 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  padding: 0;
   height: 100vh;
+  background-color: #4a9196;
+  color: rgb(232, 232, 232);
+  font-family: "Roboto";
+}
+
+.container {
+  height: 750px;
+  width: 500px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #438387, #4f9ba1);
+  box-shadow: 31px 31px 60px #3e7a7e, -20px -20px 60px #56a8ae;
 }
