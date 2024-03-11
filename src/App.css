@@ -7,10 +7,94 @@ body {
   font-family: "Roboto";
 }
 
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
-  height: 750px;
-  width: 500px;
+  height: 650px;
+  width: 350px !important;
   border-radius: 10px;
   background: linear-gradient(145deg, #438387, #4f9ba1);
-  box-shadow: 31px 31px 60px #3e7a7e, -20px -20px 60px #56a8ae;
+  box-shadow: 31px 10px 30px #3e7a7e, -20px -10px 40px #56a8ae;
+}
+
+@media (min-width: 530px) {
+  .container {
+    width: 600px !important;
+  }
+}
+
+input[type="text"] {
+  text-align: left;
+  font-family: "roboto";
+  color: rgb(232, 232, 232);
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 300;
+  border-bottom: 0px solid #4a9196; /* Add a black bottom border */
+  transition: border-bottom 0.3s ease; /* Add a smooth transition effect */
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: 2px solid #b6b6b6d5; /* Increase the border thickness and change color on focus */
+}
+
+.input-group {
+  margin: 0 auto;
+  max-width: 160px;
+  min-height: 70px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.submit-button {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 10px;
+  padding: 0.5em 1em;
+  border: transparent;
+  box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.24);
+  background: #616161b3;
+  border-radius: 8px;
+  color: #4a9196;
+  transition: color 0.2s;
+  font-family: "Roboto";
+}
+
+.submit-button:hover {
+  transition: 0.3s;
+  background: linear-gradient(90deg, #4a9196 25%, #a997bb 100%);
+  cursor: pointer;
+  color: rgb(218, 218, 218);
+}
+
+.submit-button:active {
+  transform: translate(0em, 0.2em);
+}
+
+.submit-button span {
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #4a9196 25%, #a997bb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.2s;
+}
+
+.submit-button:hover span {
+  background: #2e2e2e;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.2s;
+}
+
+::placeholder {
+  color: rgb(184, 184, 184);
 }

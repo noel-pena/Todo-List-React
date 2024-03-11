@@ -1,8 +1,8 @@
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { Grid } from "@mui/material";
 
 export const Title = () => {
   return (
-    <Grid2
+    <Grid
       container
       style={{
         display: "flex",
@@ -10,10 +10,10 @@ export const Title = () => {
         justifyContent: "center",
       }}
     >
-      <Grid2
+      <Grid
         container
         item
-        pt={6}
+        pt={8}
         sx={{
           flexDirection: "column",
           textAlign: "center",
@@ -22,12 +22,20 @@ export const Title = () => {
           lineHeight: "0.75",
         }}
       >
-        <span style={{ fontWeight: 500, fontSize: "2.5rem" }}>Todo</span>
+        <span
+          style={{
+            fontWeight: 500,
+            fontSize: "2.5rem",
+            letterSpacing: "0.25rem",
+          }}
+        >
+          Todo
+        </span>
         <p>
           Write <span style={{ fontWeight: 500 }}>down</span>, Check{" "}
           <span style={{ fontWeight: 500 }}>off</span>
         </p>
-      </Grid2>
-    </Grid2>
+      </Grid>
+    </Grid>
   );
 };
