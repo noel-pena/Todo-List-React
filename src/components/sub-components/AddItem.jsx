@@ -5,6 +5,7 @@ export const AddItem = () => {
     <Grid container item>
       <form className="input-group" action="/add" method="post">
         <input
+          className="input-box"
           type="text"
           name="newItem"
           autoComplete="off"

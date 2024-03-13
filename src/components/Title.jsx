@@ -14,6 +14,7 @@ export const Title = () => {
         container
         item
         pt={8}
+        pb={1}
         sx={{
           flexDirection: "column",
           textAlign: "center",

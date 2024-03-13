@@ -34,23 +34,30 @@ input[type="text"] {
   background: transparent;
   font-size: 18px;
   font-weight: 300;
-  border-bottom: 1px solid #b6b6b645;
+  border-bottom: 0px solid #b6b6b645;
   transition: border-bottom 0.1s ease;
 }
 
 input[type="text"]:focus {
   outline: none;
-  border-bottom: 0px solid #b6b6b6d5;
+  border-bottom: 1px solid #d6d6d6d5;
 }
-
 .input-group {
   margin: 0 auto;
-  max-width: 160px;
+  max-width: 300px;
   min-height: 75px;
-  gap: 10px;
+  padding-left: 25px;
+  gap: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: right;
+}
+
+@media (min-width: 530px) {
+  .input-group {
+    padding-left: 225px;
+    gap: 240px !important;
+  }
 }
 
 .submit-button {
@@ -70,6 +77,8 @@ input[type="text"]:focus {
 .submit-button:hover {
   transition: 0.3s;
   background: linear-gradient(90deg, #4a9196 25%, #a997bb 100%);
+  box-shadow: 0 5px 16px 0 rgba(164, 164, 164, 0.12);
+
   cursor: pointer;
   color: rgb(218, 218, 218);
 }
@@ -101,20 +110,29 @@ input[type="text"]:focus {
 }
 
 .item-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .item {
   height: 75px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  text-align: left;
   border-bottom: 1px solid;
-
   border-color: #5a5a5a7a;
-  cursor: pointer;
   color: #dadada;
   transition: max-height 0.3s ease;
 }
@@ -122,10 +140,49 @@ input[type="text"]:focus {
 .item-text {
   font-weight: 300;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 @media (min-width: 530px) {
   .item-text {
     font-size: 1.25rem !important;
   }
+}
+.hamburger {
+  cursor: pointer;
+  padding-left: 30px;
+  gap: 30px;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  padding-top: 2px;
+  height: 1.5em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
 }
