@@ -62,7 +62,7 @@ input[type="text"]:focus {
   border: transparent;
   box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.24);
   background: #616161b3;
-  border-radius: 8px;
+  border-radius: 50px;
   color: #4a9196;
   transition: color 0.2s;
   font-family: "Roboto";

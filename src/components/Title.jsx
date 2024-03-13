@@ -26,10 +26,10 @@ export const Title = () => {
           style={{
             fontWeight: 500,
             fontSize: "2.5rem",
-            letterSpacing: "0.25rem",
+            letterSpacing: "0.5rem",
           }}
         >
-          Todo
+          TODO
         </span>
         <p>
           Write <span style={{ fontWeight: 500 }}>down</span>, Check{" "}
