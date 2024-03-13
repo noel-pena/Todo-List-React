@@ -14,7 +14,6 @@ html {
 }
 
 .container {
-  height: 650px;
   width: 350px !important;
   border-radius: 10px;
   background: linear-gradient(145deg, #438387, #4f9ba1);
@@ -35,23 +34,23 @@ input[type="text"] {
   background: transparent;
   font-size: 18px;
   font-weight: 300;
-  border-bottom: 0px solid #4a9196; /* Add a black bottom border */
-  transition: border-bottom 0.3s ease; /* Add a smooth transition effect */
+  border-bottom: 1px solid #b6b6b645;
+  transition: border-bottom 0.1s ease;
 }
 
 input[type="text"]:focus {
   outline: none;
-  border-bottom: 2px solid #b6b6b6d5; /* Increase the border thickness and change color on focus */
+  border-bottom: 0px solid #b6b6b6d5;
 }
 
 .input-group {
   margin: 0 auto;
   max-width: 160px;
-  min-height: 70px;
+  min-height: 75px;
+  gap: 10px;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 20px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .submit-button {
@@ -96,5 +95,37 @@ input[type="text"]:focus {
 }
 
 ::placeholder {
-  color: rgb(184, 184, 184);
+  color: rgba(184, 184, 184, 0.564);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.item-container {
+  width: 100%;
+}
+
+.item {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid;
+
+  border-color: #5a5a5a7a;
+  cursor: pointer;
+  color: #dadada;
+  transition: max-height 0.3s ease;
+}
+
+.item-text {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+@media (min-width: 530px) {
+  .item-text {
+    font-size: 1.25rem !important;
+  }
 }
