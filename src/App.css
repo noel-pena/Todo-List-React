@@ -134,13 +134,18 @@ input[type="text"]:focus {
   border-bottom: 1px solid;
   border-color: #5a5a5a7a;
   color: #dadada;
-  transition: max-height 0.3s ease;
+  transition: max-height ease 0.3s;
 }
 
 .item-text {
   font-weight: 300;
   font-size: 1rem;
   cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.item-text:hover {
+  text-shadow: 10px 10px 20px#ffffffb4;
 }
 
 @media (min-width: 530px) {
@@ -162,6 +167,11 @@ input[type="text"]:focus {
   padding-top: 2px;
   height: 1.5em;
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: text-shadow ease-in-out 0.2s;
+}
+
+.hamburger:hover {
+  text-shadow: 10px 10px 20px#ffffffb4;
 }
 
 .line {

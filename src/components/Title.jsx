@@ -14,24 +14,25 @@ export const Title = () => {
         container
         item
         pt={8}
-        pb={1}
+        pb={4}
         sx={{
           flexDirection: "column",
           textAlign: "center",
           fontSize: "1.5rem",
           fontWeight: 200,
-          lineHeight: "0.75",
+          lineHeight: "0",
         }}
       >
-        <span
+        <p
           style={{
             fontWeight: 500,
             fontSize: "2.5rem",
             letterSpacing: "0.5rem",
+            paddingLeft: "12px",
           }}
         >
           TODO
-        </span>
+        </p>
         <p>
           Write <span style={{ fontWeight: 500 }}>down</span>, Check{" "}
           <span style={{ fontWeight: 500 }}>off</span>
