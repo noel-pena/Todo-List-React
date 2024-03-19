@@ -36,7 +36,7 @@ export const ItemBox = () => {
               />
               <CheckBox />
               <span className="item-text">{item.title}</span>
-              <button onClick={() => handleEditClick(item.id)}>Edit</button>
+              <button onClick={() => handleEditClick(item.id)}>Modify</button>
             </label>
           </div>
         ))}
