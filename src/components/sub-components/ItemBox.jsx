@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import { CheckBox } from "./CheckBox";
+import axios from "axios";
 
 export const ItemBox = () => {
-  const items = [
-    { id: 1, title: "this is an item" },
-    { id: 2, title: "this is another item" },
-    { id: 3, title: "this is another item!" },
-  ];
+  // const items = [
+  //   { id: 1, title: "this is an item" },
+  //   { id: 2, title: "this is another item" },
+  //   { id: 3, title: "this is another item!" },
+  // ];
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    axios.get("/api/items").then((response) => {
+      setItems(response.data);
+    });
+  }, []);
 
   const [checkedItems, setCheckedItems] = useState({});
 

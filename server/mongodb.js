@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const dbUrl = process.env.MONGODB_URI;
+const dbUrl =
+  "mongodb+srv://noelpena:1234@cluster0.xbaexmf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const itemSchema = new mongoose.Schema({
   title: { type: String, required: true },
