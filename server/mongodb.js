@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const dbUrl =
-  "mongodb+srv://noelpena:1234@cluster0.xbaexmf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://noelpena:1234@cluster0.xbaexmf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; //no critical info therefore removed need for env file
 
 const itemSchema = new mongoose.Schema({
   title: { type: String, required: true },
