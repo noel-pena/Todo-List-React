@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import { CheckBox } from "./CheckBox";
 import axios from "axios";
 
-export const ItemBox = () => {
+export const ItemsToday = () => {
   // const items = [
   //   { id: 1, title: "this is an item" },
   //   { id: 2, title: "this is another item" },
