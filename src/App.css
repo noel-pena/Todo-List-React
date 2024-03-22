@@ -17,7 +17,7 @@ html {
   width: 350px !important;
   border-radius: 10px;
   background: linear-gradient(145deg, #438387, #4f9ba1);
-  box-shadow: 31px 10px 30px #3e7a7e, -20px -10px 40px #56a8ae;
+  box-shadow: 31px 10px 30px #3e7a7e, -20px -1px 40px #56a8ae;
 }
 
 @media (min-width: 530px) {
