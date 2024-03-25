@@ -13,9 +13,15 @@ export const ItemsToday = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/items").then((response) => {
-      setItems(response.data);
-    });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/items");
+        setItems(response.data);
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      }
+    };
+    fetchData();
   }, []);
 
   const [checkedItems, setCheckedItems] = useState({});
