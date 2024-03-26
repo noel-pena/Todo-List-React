@@ -4,12 +4,6 @@ import { CheckBox } from "./CheckBox";
 import axios from "axios";
 
 export const ItemsToday = () => {
-  // const items = [
-  //   { id: 1, title: "this is an item" },
-  //   { id: 2, title: "this is another item" },
-  //   { id: 3, title: "this is another item!" },
-  // ];
-
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -26,17 +20,32 @@ export const ItemsToday = () => {
 
   const [checkedItems, setCheckedItems] = useState({});
 
-  const handleCheckboxChange = (itemId) => {
+  const handleCheckboxChange = async (itemId) => {
     setCheckedItems((prevChecked) => ({
       ...prevChecked,
       [itemId]: !prevChecked[itemId],
     }));
+
+    // Remove the item from the list if unchecked
+    if (!checkedItems[itemId]) {
+      try {
+        // Send a DELETE request to the backend
+        await axios.delete(`/api/items/${itemId}`);
+        console.log(`Item with ID ${itemId} deleted successfully.`);
+
+        // Update the state to remove the item from the list
+        setItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+      } catch (error) {
+        console.error("Error deleting item:", error);
+      }
+    }
   };
 
-  const handleEditClick = (itemId) => {
-    // Implement your edit logic here (e.g., open a modal or navigate to an edit page)
-    console.log(`Editing item with ID ${itemId}`);
-  };
+  //// edit button feature, removing for now to have a better UI look
+  // const handleEditClick = (itemId) => {
+  //   // Implement your edit logic here (e.g., open a modal or navigate to an edit page)
+  //   console.log(`Editing item with ID ${itemId}`);
+  // };
 
   return (
     <Grid container item pt={1}>
@@ -51,7 +60,7 @@ export const ItemsToday = () => {
               />
               <CheckBox />
               <span className="item-text">{item.title}</span>
-              <button onClick={() => handleEditClick(item.id)}>Modify</button>
+              {/* <button onClick={() => handleEditClick(item.id)}>Modify</button> */}
             </label>
           </div>
         ))}

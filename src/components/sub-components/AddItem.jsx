@@ -10,6 +10,7 @@ export const AddItem = () => {
     try {
       await axios.post("/api/add", { newItem });
       console.log("Item added successfully.");
+      window.location.reload();
     } catch (error) {
       console.log("Error adding item:", error);
     }

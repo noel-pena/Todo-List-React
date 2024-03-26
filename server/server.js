@@ -5,7 +5,8 @@ import { Item, connectToMongoDB } from "./mongodb.js";
 const app = express();
 const PORT = 3000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 connectToMongoDB();
@@ -29,6 +30,17 @@ app.post("/api/add", async (req, res) => {
   } catch (error) {
     console.error("Error adding item:", error);
     res.status(500).send("Internal Server Error");
+  }
+});
+
+app.delete("/api/items/:id", async (req, res) => {
+  const itemId = req.params.id;
+  try {
+    await Item.findByIdAndDelete(itemId);
+    res.status(200).json({ message: "Item deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting item:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
