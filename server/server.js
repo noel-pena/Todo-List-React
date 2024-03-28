@@ -36,6 +36,7 @@ app.post("/api/add", async (req, res) => {
 app.delete("/api/items/:id", async (req, res) => {
   const itemId = req.params.id;
   try {
+    // Use Mongoose to delete the item by _id
     await Item.findByIdAndDelete(itemId);
     res.status(200).json({ message: "Item deleted successfully" });
   } catch (error) {
