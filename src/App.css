@@ -121,6 +121,12 @@ input[type="text"]:focus {
   margin-bottom: 10px;
 }
 
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .checkbox-label {
   display: flex;
   align-items: center;

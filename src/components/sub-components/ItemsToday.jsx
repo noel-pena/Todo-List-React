@@ -21,46 +21,32 @@ export const ItemsToday = () => {
   const [checkedItems, setCheckedItems] = useState({});
 
   const handleCheckboxChange = async (itemId) => {
-    setCheckedItems((prevChecked) => ({
-      ...prevChecked,
-      [itemId]: !prevChecked[itemId],
-    }));
+    try {
+      await axios.delete(`/api/items/${itemId}`);
+      setCheckedItems((prevChecked) => ({
+        ...prevChecked,
+        [itemId]: !prevChecked[itemId],
+      }));
 
-    // Remove the item from the list if unchecked
-    if (!checkedItems[itemId]) {
-      try {
-        // Send a DELETE request to the backend
-        await axios.delete(`/api/items/${itemId}`);
-        console.log(`Item with ID ${itemId} deleted successfully.`);
-
-        // Update the state to remove the item from the list
-        setItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
-      } catch (error) {
-        console.error("Error deleting item:", error);
-      }
+      setItems((prevItems) => prevItems.filter((item) => item._id !== itemId));
+    } catch (error) {
+      console.error("Error deleting item:", error);
     }
   };
-
-  //// edit button feature, removing for now to have a better UI look
-  // const handleEditClick = (itemId) => {
-  //   // Implement your edit logic here (e.g., open a modal or navigate to an edit page)
-  //   console.log(`Editing item with ID ${itemId}`);
-  // };
 
   return (
     <Grid container item pt={1}>
       <div className="item-container">
         {items.map((item) => (
-          <div key={item.id} className="item item-row">
+          <div key={item._id} className="item item-row">
             <label className="checkbox-label hamburger">
               <input
                 type="checkbox"
-                checked={checkedItems[item.id] || false}
-                onChange={() => handleCheckboxChange(item.id)}
+                checked={checkedItems[item._id] ? false : true}
+                onChange={() => handleCheckboxChange(item._id)}
               />
               <CheckBox />
               <span className="item-text">{item.title}</span>
-              {/* <button onClick={() => handleEditClick(item.id)}>Modify</button> */}
             </label>
           </div>
         ))}
@@ -68,3 +54,12 @@ export const ItemsToday = () => {
     </Grid>
   );
 };
+
+//// edit button feature, removing for now to have a better UI look
+// const handleEditClick = (itemId) => {
+//   // Implement your edit logic here (e.g., open a modal or navigate to an edit page)
+//   console.log(`Editing item with ID ${itemId}`);
+// };
+{
+  /* <button onClick={() => handleEditClick(item.id)}>Modify</button> */
+}

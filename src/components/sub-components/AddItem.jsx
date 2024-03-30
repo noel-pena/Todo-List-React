@@ -24,7 +24,7 @@ export const AddItem = () => {
           type="text"
           name="newItem"
           autoComplete="off"
-          autoFocus="true"
+          autoFocus={true}
           placeholder="Type here"
           value={newItem}
           onChange={(e) => setNewItem(e.target.value)}
