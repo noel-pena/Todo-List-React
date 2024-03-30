@@ -1,10 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { Item, connectToMongoDB } from "./mongodb.js";
+import cors from "cors";
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
