@@ -2,6 +2,10 @@ import express from "express";
 import bodyParser from "body-parser";
 import { Item, connectToMongoDB } from "./mongodb.js";
 import cors from "cors";
+import path from "path";
+import * as url from "url";
+
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 const app = express();
 const PORT = 3000;
@@ -9,9 +13,12 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static("public"));
 
 connectToMongoDB();
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 app.get("/api/items", async (req, res) => {
   try {
