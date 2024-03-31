@@ -1,5 +1,5 @@
 # ToDo List
 
-Stack: Vite/React, MongoDB, Expressjs
+### Stack: Vite/React, MongoDB, Expressjs
 
-Work in progress
+### live site: https://todo-list-react-50js.onrender.com/
