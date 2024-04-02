@@ -211,9 +211,9 @@ input[type="text"]:focus {
 }
 
 .line2 {
+  border-top: 1px;
   border-color: rgba(212, 212, 212, 0.558);
   margin-top: 50px;
-  border-style: ridge;
 }
 
 .footer-icons {
