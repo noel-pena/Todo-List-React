@@ -15,10 +15,6 @@ export const AddItem = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    setNewItem(e.target.value.trim());
-  };
-
   const hasLetters = /[a-zA-Z]/.test(newItem);
 
   return (
@@ -32,7 +28,7 @@ export const AddItem = () => {
           autoFocus={true}
           placeholder="Type here"
           value={newItem}
-          onChange={handleInputChange}
+          onChange={(e) => setNewItem(e.target.value)}
         />
         {hasLetters && (
           <button className="submit-button item-text" type="submit">
