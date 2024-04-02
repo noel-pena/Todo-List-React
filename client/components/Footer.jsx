@@ -10,7 +10,7 @@ export const Footer = () => {
 
   return (
     <>
-      <hr className="line" />
+      <hr className="line2" />
       <Grid container p={4} spacing={1} justifyContent="center">
         <Grid
           item
