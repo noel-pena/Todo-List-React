@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
 
@@ -16,8 +15,14 @@ export const AddItem = () => {
     }
   };
 
+  const handleInputChange = (e) => {
+    setNewItem(e.target.value.trim());
+  };
+
+  const hasLetters = /[a-zA-Z]/.test(newItem);
+
   return (
-    <Grid container item>
+    <>
       <form className="input-group" onSubmit={handleSubmit}>
         <input
           className="input-box"
@@ -27,12 +32,14 @@ export const AddItem = () => {
           autoFocus={true}
           placeholder="Type here"
           value={newItem}
-          onChange={(e) => setNewItem(e.target.value)}
+          onChange={handleInputChange}
         />
-        <button className="submit-button item-text" type="submit">
-          Add
-        </button>
+        {hasLetters && (
+          <button className="submit-button item-text" type="submit">
+            Add
+          </button>
+        )}
       </form>
-    </Grid>
+    </>
   );
 };
