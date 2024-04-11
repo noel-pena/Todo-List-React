@@ -11,7 +11,13 @@ export const Footer = () => {
   return (
     <>
       <hr className="line2" />
-      <Grid container p={4} spacing={1} justifyContent="center">
+      <Grid
+        container
+        p={4}
+        spacing={1}
+        justifyContent="center"
+        alignItems="center"
+      >
         <Grid
           item
           xs={6}
@@ -21,7 +27,6 @@ export const Footer = () => {
             fontWeight: 300,
             fontSize: "10px",
             textAlign: "left",
-            marginTop: "10px",
           }}
         >
           NPX | Copyright © {year}

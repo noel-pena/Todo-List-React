@@ -1,15 +1,18 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import { CheckBox } from "./CheckBox";
 import axios from "axios";
 
-export const ItemsToday = () => {
+export const Items = ({ getRequest }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/items");
+        console.log("Fetching data from:", `/api/${getRequest}`);
+        const response = await axios.get(`/api/${getRequest}`);
+        console.log("Response data:", response.data);
         setItems(response.data);
       } catch (error) {
         console.error("Error fetching items:", error);
@@ -22,7 +25,7 @@ export const ItemsToday = () => {
 
   const handleCheckboxChange = async (itemId) => {
     try {
-      await axios.delete(`/api/items/${itemId}`);
+      await axios.delete(`/api/${getRequest}/${itemId}`);
       setCheckedItems((prevChecked) => ({
         ...prevChecked,
         [itemId]: !prevChecked[itemId],

@@ -1,13 +1,14 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
 import { useState } from "react";
 
-export const AddItem = () => {
+export const AddItem = ({ customPostRoute }) => {
   const [newItem, setNewItem] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/add", { newItem });
+      await axios.post(customPostRoute, { newItem }); // Use the custom post route
       console.log("Item added successfully.");
       window.location.reload();
     } catch (error) {

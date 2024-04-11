@@ -13,7 +13,7 @@ export const Title = () => {
       <Grid
         container
         item
-        pt={8}
+        pt={2}
         pb={4}
         sx={{
           flexDirection: "column",
