@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import TodayNotes from "./pages/TodayNotes";
 import WeekNotes from "./pages/WeekNotes";
 import MonthNotes from "./pages/MonthNotes";

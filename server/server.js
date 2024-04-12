@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("dist")); //remove for dev; to run use NODE_ENV=production node server/server.js
+app.use(express.static("public"));
 
 connectToMongoDB();
 

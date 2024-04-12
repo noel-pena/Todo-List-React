@@ -3,9 +3,9 @@ import { Title } from "../components/Title";
 import { AddItem } from "../components/sub-components/AddItem";
 import { Footer } from "../components/Footer";
 import { Grid } from "@mui/material";
-import { Items } from "../components/sub-components/Items";
+import { Items } from "../components/Items";
 
-function TodayNotes() {
+function WeekNotes() {
   return (
     <>
       <Header />
@@ -19,4 +19,4 @@ function TodayNotes() {
   );
 }
 
-export default TodayNotes;
+export default WeekNotes;

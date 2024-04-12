@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
-import { CheckBox } from "./CheckBox";
+import { CheckBox } from "./sub-components/CheckBox";
 import axios from "axios";
 
 export const Items = ({ getRequest }) => {
