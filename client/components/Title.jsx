@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 
-export const Title = () => {
+export const Title = ({ titlePage }) => {
   return (
     <Grid
       container
@@ -31,7 +31,7 @@ export const Title = () => {
             paddingLeft: "12px",
           }}
         >
-          TODO
+          {titlePage}
         </p>
         <p>
           Write <span style={{ fontWeight: 500 }}>down</span>, Check{" "}

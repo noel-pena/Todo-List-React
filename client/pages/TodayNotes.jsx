@@ -9,7 +9,7 @@ function TodayNotes() {
   return (
     <>
       <Header />
-      <Title />
+      <Title titlePage="Today" />
       <Grid container className="container">
         <Items getRequest="items" />
         <AddItem customPostRoute="/api/add" />
