@@ -9,7 +9,7 @@ function MonthNotes() {
   return (
     <>
       <Header />
-      <Title titlePage="Month" />
+      <Title titlePage="MONTH" />
       <Grid container className="container">
         <Items getRequest="items3" />
         <AddItem customPostRoute="/api/add3" />

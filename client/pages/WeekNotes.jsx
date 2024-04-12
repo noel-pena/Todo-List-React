@@ -9,7 +9,7 @@ function WeekNotes() {
   return (
     <>
       <Header />
-      <Title titlePage="Week" />
+      <Title titlePage="WEEK" />
       <Grid container className="container">
         <Items getRequest="items2" />
         <AddItem customPostRoute="/api/add2" />
