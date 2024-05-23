@@ -2,12 +2,13 @@ import { Header } from "../components/Header";
 import { Title } from "../components/Title";
 import { AddItem } from "../components/sub-components/AddItem";
 import { Footer } from "../components/Footer";
-import { Grid } from "@mui/material";
+import { Grid, CssBaseline } from "@mui/material";
 import { Items } from "../components/Items";
 
 function WeekNotes() {
   return (
     <>
+      <CssBaseline />
       <Header />
       <Title titlePage="WEEK" />
       <Grid container className="container">

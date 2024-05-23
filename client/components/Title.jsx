@@ -30,11 +30,12 @@ export const Title = ({ titlePage }) => {
             fontSize: "2.5rem",
             letterSpacing: "0.5rem",
             paddingLeft: "12px",
+            color: "rgb(230, 230, 230)",
           }}
         >
           {titlePage}
         </p>
-        <p>
+        <p style={{ color: "rgb(230, 230, 230)" }}>
           Write <span style={{ fontWeight: 500 }}>down</span>, Check{" "}
           <span style={{ fontWeight: 500 }}>off</span>
         </p>
