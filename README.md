@@ -4,7 +4,7 @@ This is a Todo List application built using Vite and React for the frontend, and
 
 ## Demo
 
-With render free version, it does about 1 minute to first time load. live site: https://todo-list-react-50js.onrender.com/
+With render free version, it does take about 1 minute to load for the first time. live site: https://todo-list-react-50js.onrender.com/
 
 ## Features
 
