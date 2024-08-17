@@ -268,7 +268,6 @@ input[type="text"]:focus {
   }
 }
 
-/* Bounce To Left */
 .hvr-bounce-to-left {
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);

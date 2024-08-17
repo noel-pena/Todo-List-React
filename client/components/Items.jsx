@@ -10,9 +10,7 @@ export const Items = ({ getRequest }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("Fetching data from:", `/api/${getRequest}`);
         const response = await axios.get(`/api/${getRequest}`);
-        console.log("Response data:", response.data);
         setItems(response.data);
       } catch (error) {
         console.error("Error fetching items:", error);
@@ -57,12 +55,3 @@ export const Items = ({ getRequest }) => {
     </Grid>
   );
 };
-
-//// edit button feature, removing for now to have a better UI look
-// const handleEditClick = (itemId) => {
-//   // Implement your edit logic here (e.g., open a modal or navigate to an edit page)
-//   console.log(`Editing item with ID ${itemId}`);
-// };
-{
-  /* <button onClick={() => handleEditClick(item.id)}>Modify</button> */
-}

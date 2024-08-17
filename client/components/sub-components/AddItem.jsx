@@ -8,8 +8,7 @@ export const AddItem = ({ customPostRoute }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(customPostRoute, { newItem }); // Use the custom post route
-      console.log("Item added successfully.");
+      await axios.post(customPostRoute, { newItem });
       window.location.reload();
     } catch (error) {
       console.log("Error adding item:", error);

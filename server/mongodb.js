@@ -19,7 +19,6 @@ async function connectToMongoDB() {
     await mongoose.connect(dbUrl, {
       ssl: true,
     });
-    console.log("Connected to MongoDB!");
   } catch (error) {
     console.error("MongoDB connection error:", error);
   }
