@@ -51,13 +51,27 @@ Todo-List-React/
 
 ## API Endpoints
 
+## Run Locally
+
+1. Install dependencies:
+
+```
+npm install:
+```
+
+2. Run
+
+```
+npm run dev
+```
+
 ### Get All Items
 
 - Endpoint: GET /api/items
 - Description: Fetch all todo items for today.
 - Response:
-  - 200 OK: Returns an array of items.
-  - 500 Internal Server Error: If there's an issue fetching the items.
+- 200 OK: Returns an array of items.
+- 500 Internal Server Error: If there's an issue fetching the items.
 
 ### Add a New Item
 
